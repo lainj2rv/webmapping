@@ -55,23 +55,16 @@ opacity: 1,
 }
 return L.circleMarker(latlng, options)
 }
+
+// add geoJSON layer
 async function addCelltowersGeoJson(url) {
 const response = await fetch(url)
 const data = await response.json()
 const circles = L.geoJson(data, {
 pointToLayer: createCircle,
 })
-circles.addTo(map)
-}
-addCelltowersGeoJson('geojson/tartu_city_celltowers_edu.geojson')
-
-// add geoJSON layer
-async function addCelltowersGeoJson(url) {
-const response = await fetch(url)
-const data = await response.json()
-const markers = L.geoJson(data)
 const clusters = L.markerClusterGroup()
-clusters.addLayer(markers)
+clusters.addLayer(circles)
 clusters.addTo(map)
 }
 addCelltowersGeoJson('geojson/tartu_city_celltowers_edu.geojson')
