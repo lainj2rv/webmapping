@@ -19,7 +19,7 @@ fillColor: '#fdfd96',
 fillOpacity: 0.5,
 weight: 1,
 opacity: 1,
-color: 'grey',
+color: '#023020',
 }
 }
 
