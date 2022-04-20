@@ -11,6 +11,18 @@ osm.addTo(map)
 function popUPinfo(feature, layer) {
 layer.bindPopup(feature.properties.NIMI)
 }
+
+// polygon style
+function polygonStyle(feature) {
+return {
+fillColor: '#fdfd96',
+fillOpacity: 0.5,
+weight: 1,
+opacity: 1,
+color: 'grey',
+}
+}
+
 // add geoJSON polygons layer
 async function addDistrictsGeoJson(url) {
 const response = await fetch(url)
