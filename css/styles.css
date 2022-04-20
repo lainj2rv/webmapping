@@ -1,0 +1,29 @@
+img {
+width: 100%; height:auto;
+}
+.active{
+  color:red;
+  text-decoration:none;
+}
+h1 {
+text-align: center;
+color: #17396A;
+margin-top:auto;
+margin-bottom:auto;
+}
+
+.container{
+  padding-left:5%;
+  padding-right:5%;
+}
+
+.map-container{
+  height: 700px;
+}
+
+p {
+  margin-top:auto;
+  padding:10px;
+  background-color:#9AE1C4;
+  color:#17396A;
+}
