@@ -18,6 +18,8 @@ margin-bottom:auto;
 }
 
 .map-container{
+  margin-top:auto;
+  margin-bottom:auto;
   height: 700px;
 }
 
