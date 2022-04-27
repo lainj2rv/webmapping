@@ -17,9 +17,9 @@ function polygonStyle(feature) {
 return {
 fillColor: '#60948E',
 fillOpacity: 0.5,
-weight: 1,
+weight: 1.5,
 opacity: 1,
-color: '#376F8D',
+color: '#fff',
 }
 }
 
