@@ -7,22 +7,26 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 
 osm.addTo(map)
 
+addGeoJson('geojson/tartu_city_districts_edu.geojson')
+
 // add geoJSON layer
-async function addCelltowersGeoJson(url) {
+async function addGeoJson(url) {
 const response = await fetch(url)
 const data = await response.json()
-const heatData = data.features.map(heatDataConvert)
-const heatMap = L.heatLayer(heatData, { radius: 10 })
-heatMap.addTo(map)
-}
-addCelltowersGeoJson('geojson/tartu_city_celltowers_edu.geojson')
-
-function heatDataConvert(feature) {
-return [
-feature.geometry.coordinates[1],
-feature.geometry.coordinates[0],
-feature.properties.area,
-]
+L.choropleth(data, {
+valueProperty: 'OBJECTID',
+scale: ['#B3DC8F', '#0D4B8C'],
+steps: 5,
+mode: 'q', // q for quantile, e for equidistant
+style: {
+color: '#fff',
+weight: 2,
+fillOpacity: 0.8,
+},
+onEachFeature: function (feature, layer) {
+layer.bindPopup('Value: ' + feature.properties.OBJECTID)
+},
+}).addTo(map)
 }
 
 // default map settings
