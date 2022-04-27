@@ -15,11 +15,11 @@ layer.bindPopup(feature.properties.NIMI)
 // polygon style
 function polygonStyle(feature) {
 return {
-fillColor: '#fdfd96',
+fillColor: '#60948E',
 fillOpacity: 0.5,
 weight: 1,
 opacity: 1,
-color: '#023020',
+color: '#376F8D',
 }
 }
 
@@ -38,9 +38,9 @@ addDistrictsGeoJson('geojson/tartu_city_districts_edu.geojson')
 function createCircle(feature, latlng) {
 let options = {
 radius: 5,
-fillColor: '#083461',
+fillColor: '#0D4B8C',
 fillOpacity: 0.8,
-color: '#083461',
+color: '#0D4B8C',
 weight: 1,
 opacity: 1,
 }
