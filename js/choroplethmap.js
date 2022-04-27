@@ -24,7 +24,7 @@ weight: 1.5,
 fillOpacity: 0.8,
 },
 onEachFeature: function (feature, layer) {
-layer.bindPopup('District: ' + feature.properties.NIMI,
+layer.bindPopup('District: ' + feature.properties.NIMI + '</br>' +
                 'Value: ' + feature.properties.OBJECTID)
 },
 }).addTo(map)
